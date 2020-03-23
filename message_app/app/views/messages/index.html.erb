@@ -1,2 +1,14 @@
-<h1>Messages#index</h1>
-<p>Find me in app/views/messages/index.html.erb</p>
+<h1>Tweet一覧</h1>
+<%= link_to "新しいTweetをする" , new_message_path %>
+<table>
+  <tr>
+    <th>Tweet内容</th>
+    <th>Tweet日時</th>
+  </tr>
+  <% @messages.each do |msg| %>
+    <tr>
+      <td><%= msg.content %></td>
+      <td><%= msg.created_at %></td>
+    </tr>
+  <% end %>
+</table>
