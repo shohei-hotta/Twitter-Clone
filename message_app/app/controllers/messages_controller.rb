@@ -17,6 +17,16 @@ class MessagesController < ApplicationController
   end
 
   def edit
+    @message = Message.find(params[:id])
+  end
+
+  def update
+    @message = Message.find(params[:id])
+    if @message.update(message_params)
+      redirect_to messages_path, notice: "Tweetを編集しました"
+    else
+      render :edit
+    end
   end
 
   def show

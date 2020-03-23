@@ -10,6 +10,7 @@
       <td><%= form.content %></td>
       <td><%= form.created_at %></td>
       <td><%= link_to "Tweetの詳細", message_path(form.id) %></td>
+      <td><%= link_to "Tweetの編集", edit_message_path(form.id) %></td>
     </tr>
   <% end %>
 </table>

@@ -1,2 +1,21 @@
-<h1>Messages#edit</h1>
-<p>Find me in app/views/messages/edit.html.erb</p>
+<h1>Tweetの編集</h1>
+<%= form_with model: @message, local: true do |form| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @message.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="message_content">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+  <%= form.submit %>
+<% end %>
+
+<%= link_to "Tweet一覧に戻る", messages_path %>
