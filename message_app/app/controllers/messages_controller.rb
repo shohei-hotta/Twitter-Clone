@@ -9,8 +9,11 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    @message.save
-    redirect_to messages_path, notice: "Tweetしました。"
+    if @message.save
+      redirect_to messages_path, notice: "Tweetしました。"
+    else
+      render :new
+    end
   end
 
   def edit

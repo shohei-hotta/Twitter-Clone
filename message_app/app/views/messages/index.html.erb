@@ -5,10 +5,10 @@
     <th>Tweet内容</th>
     <th>Tweet日時</th>
   </tr>
-  <% @messages.each do |msg| %>
+  <% @messages.each do |form| %>
     <tr>
-      <td><%= msg.content %></td>
-      <td><%= msg.created_at %></td>
+      <td><%= form.content %></td>
+      <td><%= form.created_at %></td>
     </tr>
   <% end %>
 </table>
