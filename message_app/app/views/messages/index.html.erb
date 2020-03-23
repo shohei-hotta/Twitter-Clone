@@ -11,6 +11,7 @@
       <td><%= form.created_at %></td>
       <td><%= link_to "Tweetの詳細", message_path(form.id) %></td>
       <td><%= link_to "Tweetの編集", edit_message_path(form.id) %></td>
+      <td><%= link_to "Tweetの削除", message_path(form.id), method: :delete, data: {confirm: "本当に削除していいですか？"} %></td>
     </tr>
   <% end %>
 </table>

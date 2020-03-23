@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:edit, :update, :show]
+  before_action :set_message, only: [:edit, :update, :show, :destroy]
 
   def index
     @messages = Message.all
@@ -30,6 +30,11 @@ class MessagesController < ApplicationController
   end
 
   def show
+  end
+
+  def destroy
+    @message.destroy
+    redirect_to messages_path, notice: "Tweetを削除しました"
   end
 
   private
