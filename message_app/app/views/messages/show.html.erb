@@ -1,2 +1,4 @@
-<h1>Messages#show</h1>
-<p>Find me in app/views/messages/show.html.erb</p>
+<h1>Tweetの詳細</h1>
+<%= link_to "Tweet一覧に戻る", messages_path %>
+<p>Tweet内容: <%= @message.content %></p>
+<p>Tweet日時: <%= @message.created_at %></p>
