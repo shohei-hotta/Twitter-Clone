@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  before_action :set_message, only: [:edit, :update, :show]
+
   def index
     @messages = Message.all
   end
@@ -17,11 +19,9 @@ class MessagesController < ApplicationController
   end
 
   def edit
-    @message = Message.find(params[:id])
   end
 
   def update
-    @message = Message.find(params[:id])
     if @message.update(message_params)
       redirect_to messages_path, notice: "Tweetを編集しました"
     else
@@ -30,7 +30,6 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @message = Message.find(params[:id])
   end
 
   private
@@ -39,4 +38,7 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:content)
   end
 
+  def set_message
+    @message = Message.find(params[:id])
+  end
 end
