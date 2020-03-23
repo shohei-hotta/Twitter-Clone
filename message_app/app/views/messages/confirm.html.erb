@@ -1,0 +1,6 @@
+<h3>以下の内容で送信する</h3>
+<%= form_with model: @message, local: true do |form| %>
+  <%= form.hidden_field :content %>
+  <p>Tweet内容: <%= @message.content %></p>
+  <%= form.submit "送信する" %>
+<% end %>

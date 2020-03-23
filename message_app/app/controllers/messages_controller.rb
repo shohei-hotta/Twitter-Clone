@@ -37,6 +37,10 @@ class MessagesController < ApplicationController
     redirect_to messages_path, notice: "Tweetを削除しました"
   end
 
+  def confirm
+    @message = Message.new(message_params)
+  end
+
   private
 
   def message_params
