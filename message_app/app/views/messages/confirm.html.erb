@@ -3,4 +3,5 @@
   <%= form.hidden_field :content %>
   <p>Tweet内容: <%= @message.content %></p>
   <%= form.submit "送信する" %>
+  <%= form.submit "戻る", name: "back" %>
 <% end %>

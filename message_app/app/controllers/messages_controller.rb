@@ -11,10 +11,14 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    if @message.save
-      redirect_to messages_path, notice: "Tweetしました。"
-    else
+    if params[:back]
       render :new
+    else
+      if @message.save
+        redirect_to messages_path, notice: "Tweetしました。"
+      else
+        render :new
+      end
     end
   end
 
@@ -39,6 +43,7 @@ class MessagesController < ApplicationController
 
   def confirm
     @message = Message.new(message_params)
+    render :new if @message.invalid?
   end
 
   private
