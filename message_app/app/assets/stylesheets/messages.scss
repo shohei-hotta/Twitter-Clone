@@ -1,3 +1,59 @@
-// Place all the styles related to the messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background-color: #EEEEEE;
+}
+li {
+  list-style: none;
+}
+.container {
+  min-height: 100%;
+  position: relative;
+}
+.header {
+  background-color: #00BFFF;
+}
+.logo {
+  text-decoration: none;
+  font-size: 30px;
+  color: white;
+  padding: 10px 20px;
+  float : left;
+}
+.logo:hover {
+  color: gray;
+  text-decoration: underline;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.top_menu {
+  text-align: right;
+}
+.nav_list {
+  display: inline-block;
+  padding: 20px 10px;
+}
+.footer {
+  background-color: #00BFFF;
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: table;
+}
+.footer p {
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+}

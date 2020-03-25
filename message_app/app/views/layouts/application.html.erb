@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MessageApp</title>
+    <title>Twitter Clone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,12 +10,29 @@
   </head>
 
   <body>
-    <% if flash.notice.present? %>
-      <div class="alert alert-success">
-        <%= flash.notice %>
+    <div class="container">
+      <header class="header clearfix">
+        <%= link_to "Twitter", messages_path, class: "logo" %>
+          <nav>
+            <ul class="top_menu">
+              <li class="nav_list">ログイン</li>
+              <li class="nav_list">アカウント作成</li>
+            </ul>
+          </nav>
+      </header>
+      <div class="content">
+      <article>
+        <% if flash.notice.present? %>
+          <div class="alert alert-success">
+            <%= flash.notice %>
+          </div>
+          <% end %>
+          <%= yield %>
+      </article>
       </div>
-    <% end %>
-    
-    <%= yield %>
+      <footer class="footer">
+        <p>Copyright © 2020 HOTTA INC. All rights reserved.</p>
+      </footer>
+    </div>
   </body>
 </html>
