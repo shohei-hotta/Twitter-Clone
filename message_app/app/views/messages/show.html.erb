@@ -1,5 +1,5 @@
 <h1>Tweetの詳細</h1>
 <%= link_to "Tweet一覧に戻る", messages_path %>
 <p>Tweet内容: <%= @message.content %></p>
-<p>Tweet日時: <%= @message.created_at %></p>
+<p>Tweet日時: <%= @message.created_at.strftime("%Y年%m月%d日 %H:%M") %></p>
 <%= link_to "Tweetを編集する", edit_message_path %>

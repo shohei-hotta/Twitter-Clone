@@ -1,4 +1,4 @@
-<h1>Tweet一覧</h1>
+<h1>あなたのTweet</h1>
 <%= link_to "新しいTweetをする" , new_message_path %>
 <table>
   <tr>
@@ -8,10 +8,10 @@
   <% @messages.each do |form| %>
     <tr>
       <td><%= form.content %></td>
-      <td><%= form.created_at %></td>
-      <td><%= link_to "Tweetの詳細", message_path(form.id) %></td>
-      <td><%= link_to "Tweetの編集", edit_message_path(form.id) %></td>
-      <td><%= link_to "Tweetの削除", message_path(form.id), method: :delete, data: {confirm: "本当に削除していいですか？"} %></td>
+      <td><%= form.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
+      <td><%= link_to "詳細", message_path(form.id) %></td>
+      <td><%= link_to "編集", edit_message_path(form.id) %></td>
+      <td><%= link_to "削除", message_path(form.id), method: :delete, data: {confirm: "本当に削除していいですか？"} %></td>
     </tr>
   <% end %>
 </table>

@@ -20,7 +20,6 @@
             </ul>
           </nav>
       </header>
-      <div class="content">
       <article>
         <% if flash.notice.present? %>
           <div class="alert alert-success">
@@ -29,7 +28,6 @@
           <% end %>
           <%= yield %>
       </article>
-      </div>
       <footer class="footer">
         <p>Copyright © 2020 HOTTA INC. All rights reserved.</p>
       </footer>
